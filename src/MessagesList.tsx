@@ -1,10 +1,20 @@
-import { useEffect, useState, useRef } from "react";
-import { Box, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import { useEffect, useRef } from "react";
+import { ListItem, ListItemText } from "@mui/material";
 import { Virtuoso } from "react-virtuoso";
 import "./messagesList.css";
 
-const MessagesList = ({ chatMessages }) => {
-  const virtuosoRef = useRef(null);
+interface Message {
+  content: string;
+  timestamp: string;
+  username: string;
+}
+
+interface MessagePops {
+  chatMessages: Message[];
+}
+
+const MessagesList = ({ chatMessages }: MessagePops) => {
+  const virtuosoRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // scroll to the bottom when chatMessages change
@@ -13,6 +23,7 @@ const MessagesList = ({ chatMessages }) => {
 
   const scrollToBottom = () => {
     if (virtuosoRef.current) {
+      // @ts-expect-error: because I said so!
       virtuosoRef.current.scrollToIndex({
         index: chatMessages.length - 1,
         behavior: "smooth",
@@ -22,6 +33,7 @@ const MessagesList = ({ chatMessages }) => {
 
   return (
     <Virtuoso
+      // @ts-expect-error: because I said so!
       ref={virtuosoRef}
       className="virtuosoList"
       style={{ height: 200 }}

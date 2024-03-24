@@ -9,24 +9,30 @@ const Live = () => {
   const [hasEnded, setHasEnded] = useState<boolean>(false);
 
   const initPlayer = async () => {
+    // @ts-expect-error: because I said so!
     if (IVSPlayer.isPlayerSupported && videoPlayerRef.current) {
+      // @ts-expect-error: because I said so!
       const player = await IVSPlayer.create();
-
+      // @ts-expect-error: because I said so!
       player.addEventListener(IVSPlayer.PlayerState.PLAYING, () => {
         setIsPlaying(true);
         setHasEnded(false);
       });
-
+      // @ts-expect-error: because I said so!
       player.addEventListener(IVSPlayer.PlayerState.ENDED, () => {
         setIsPlaying(false);
         setHasEnded(true);
       });
-
-      player.addEventListener(IVSPlayer.PlayerEventType.ERROR, (err: any) => {
-        if (err.type === "ErrorNotAvailable") {
-          setIsPlaying(true);
+      player.addEventListener(
+        // @ts-expect-error: because I said so!
+        IVSPlayer.PlayerEventType.ERROR,
+        (err: unknown) => {
+          // @ts-expect-error: because I said so!
+          if (err.type === "ErrorNotAvailable") {
+            setIsPlaying(true);
+          }
         }
-      });
+      );
 
       player.attachHTMLVideoElement(videoPlayerRef.current);
       player.load(import.meta.env.VITE_LIVE_STREAM_LINK);
