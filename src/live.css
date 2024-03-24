@@ -7,26 +7,22 @@
     display: none;
   }
   .playerContainer {
-    width: 90%;
+    width: 100%;
   }
   .chatContainer {
-    width: 90%;
+    width: 100%;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1280px) {
   .liveMainContainer {
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
   }
   .phantomContainer {
     display: none;
   }
   .playerContainer {
-    width: 70%;
-  }
-  .chatContainer {
-    display: none;
+    width: 100%;
   }
 }
 

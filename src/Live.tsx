@@ -5,7 +5,7 @@ import "./live.css";
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [hasEnded, setHasEnded] = useState<boolean>(false);
 
   const initPlayer = async () => {
@@ -29,7 +29,7 @@ const Live = () => {
         (err: unknown) => {
           // @ts-expect-error: because I said so!
           if (err.type === "ErrorNotAvailable") {
-            setIsPlaying(true);
+            setIsPlaying(false);
           }
         }
       );
@@ -67,7 +67,7 @@ const Live = () => {
         )}
         {hasEnded && (
           <Typography variant="h6">
-            Our live stream has ended. Thanks for coming!
+            The live stream has ended. Thanks for coming!
           </Typography>
         )}
       </Box>

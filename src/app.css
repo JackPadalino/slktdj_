@@ -14,6 +14,7 @@
 
 body {
   /* default background color for all components */
+  margin-top: 30px;
   background-color: #262626;
 }
 
