@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Box, Typography } from "@mui/material";
+import Chat from "./Chat";
 import "./live.css";
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [hasEnded, setHasEnded] = useState<boolean>(false);
 
   const initPlayer = async () => {
@@ -23,7 +24,7 @@ const Live = () => {
 
       player.addEventListener(IVSPlayer.PlayerEventType.ERROR, (err: any) => {
         if (err.type === "ErrorNotAvailable") {
-          setIsPlaying(false);
+          setIsPlaying(true);
         }
       });
 
@@ -63,6 +64,9 @@ const Live = () => {
             Our live stream has ended. Thanks for coming!
           </Typography>
         )}
+      </Box>
+      <Box className="chatContainer">
+        <Chat isPlaying={isPlaying} />
       </Box>
     </Box>
   );
