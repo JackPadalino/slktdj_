@@ -1,12 +1,27 @@
 import { useState, useEffect, useRef } from "react";
 import { Box, Typography } from "@mui/material";
 import Chat from "./Chat";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./live.css";
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [hasEnded, setHasEnded] = useState<boolean>(false);
+
+  const theme = createTheme();
+
+  theme.typography.h6 = {
+    fontFamily: "Poppins",
+    textAlign: "center",
+    fontSize: "8px", // font size for portrait and landscape views
+    "@media (min-width: 600px) and (max-width: 1280px)": {
+      fontSize: "12px",
+    },
+    "@media (min-width:1280px)": {
+      fontSize: "16px",
+    },
+  };
 
   const initPlayer = async () => {
     // @ts-expect-error: because I said so!
@@ -59,17 +74,19 @@ const Live = () => {
           playsInline
           controls
         ></video>
-        {!isPlaying && !hasEnded && (
-          <Typography variant="h6">
-            Looks likes nothing is playing! Check back soon or refresh your
-            browser.
-          </Typography>
-        )}
-        {hasEnded && (
-          <Typography variant="h6">
-            The live stream has ended. Thanks for coming!
-          </Typography>
-        )}
+        <ThemeProvider theme={theme}>
+          {!isPlaying && !hasEnded && (
+            <Typography variant="h6">
+              Looks likes nothing is playing! Check back soon or refresh your
+              browser.
+            </Typography>
+          )}
+          {hasEnded && (
+            <Typography variant="h6">
+              The live stream has ended. Thanks for coming!
+            </Typography>
+          )}
+        </ThemeProvider>
       </Box>
       <Box className="chatContainer">
         <Chat isPlaying={isPlaying} />
