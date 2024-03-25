@@ -14,13 +14,13 @@ const Live = () => {
   theme.typography.h6 = {
     fontFamily: "Poppins",
     textAlign: "center",
-    fontSize: "8px", // font size for portrait and landscape views
-    "@media (min-width: 600px) and (max-width: 1280px)": {
-      fontSize: "12px",
-    },
-    "@media (min-width:1280px)": {
-      fontSize: "16px",
-    },
+    fontSize: "16px",
+    // "@media (min-width: 600px) and (max-width: 1280px)": {
+    //   fontSize: "16px",
+    // },
+    // "@media (min-width:1280px)": {
+    //   fontSize: "16px",
+    // },
   };
 
   const initPlayer = async () => {
