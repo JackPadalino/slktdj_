@@ -6,15 +6,16 @@ import "./live.css";
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [hasEnded, setHasEnded] = useState<boolean>(false);
 
   const theme = createTheme();
 
   theme.typography.h6 = {
-    fontFamily: "Poppins",
+    fontFamily: "Times New Roman",
     textAlign: "center",
-    fontSize: "16px",
+    fontSize: "20px",
+    color: "limegreen",
     // "@media (min-width: 600px) and (max-width: 1280px)": {
     //   fontSize: "16px",
     // },
@@ -44,7 +45,7 @@ const Live = () => {
         (err: unknown) => {
           // @ts-expect-error: because I said so!
           if (err.type === "ErrorNotAvailable") {
-            setIsPlaying(false);
+            setIsPlaying(true);
           }
         }
       );

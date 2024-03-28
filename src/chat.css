@@ -31,9 +31,9 @@
 }
 
 .chatFormElement {
-  height: 25px;
+  height: 20px;
   border: none;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   padding-left: 3px;
   padding-right: 3px;
   color: black;

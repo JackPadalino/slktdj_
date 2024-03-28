@@ -16,6 +16,7 @@ body {
   /* default background color for all components */
   margin-top: 30px;
   background-color: #262626;
+  background-image: url("../assets/backgrounds/bluedrag.jpg");
 }
 
 h1,
@@ -27,6 +28,7 @@ h6,
 a,
 p,
 input {
-  font-family: "Poppins", "sans-serif";
-  color: white;
+  /* font-family: "Poppins", "sans-serif"; */
+  font-family: "Times New Roman", Times, serif;
+  color: yellow;
 }

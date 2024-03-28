@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import { ListItem, ListItemText } from "@mui/material";
+import { ListItem, ListItemText, Typography } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Virtuoso } from "react-virtuoso";
 import "./messagesList.css";
 
@@ -12,6 +13,21 @@ interface Message {
 interface MessagePops {
   chatMessages: Message[];
 }
+
+const theme = createTheme();
+
+theme.typography.h6 = {
+  fontFamily: "Times New Roman",
+  textAlign: "center",
+  fontSize: "16px",
+  color: "limegreen",
+  // "@media (min-width: 600px) and (max-width: 1280px)": {
+  //   fontSize: "16px",
+  // },
+  // "@media (min-width:1280px)": {
+  //   fontSize: "16px",
+  // },
+};
 
 const MessagesList = ({ chatMessages }: MessagePops) => {
   const virtuosoRef = useRef<HTMLElement>(null);
@@ -39,14 +55,15 @@ const MessagesList = ({ chatMessages }: MessagePops) => {
       style={{ height: 200 }}
       data={chatMessages}
       itemContent={(index, message) => (
-        <ListItem
-          key={index}
-          component="div"
-          disablePadding
-          className="listItem"
-        >
-          <ListItemText primary={`${message.username}: ${message.content}`} />
-        </ListItem>
+        <ThemeProvider theme={theme}>
+          <ListItem key={index} component="div" disablePadding>
+            {/* <ListItemText
+            className="listItem"
+            primary={`${message.username}: ${message.content}`}
+          /> */}
+            <Typography variant="h6">{`${message.username}: ${message.content}`}</Typography>
+          </ListItem>
+        </ThemeProvider>
       )}
       atBottomStateChange={(atBottom) => {
         // scroll to the bottom if not at bottom of chat
