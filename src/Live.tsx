@@ -6,7 +6,7 @@ import "./live.css";
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [hasEnded, setHasEnded] = useState<boolean>(false);
 
   const theme = createTheme();
@@ -45,7 +45,7 @@ const Live = () => {
         (err: unknown) => {
           // @ts-expect-error: because I said so!
           if (err.type === "ErrorNotAvailable") {
-            setIsPlaying(true);
+            setIsPlaying(false);
           }
         }
       );
@@ -66,6 +66,7 @@ const Live = () => {
 
   return (
     <Box className="liveMainContainer">
+      <img className="siteGif" id="gif1" src="assets/graphics/computer.gif" />
       <Box className="phantomContainer" />
       <Box className="playerContainer">
         <video
@@ -92,6 +93,7 @@ const Live = () => {
       <Box className="chatContainer">
         <Chat isPlaying={isPlaying} />
       </Box>
+      <img className="siteGif" id="gif2" src="assets/graphics/kramer.gif" />
     </Box>
   );
 };
