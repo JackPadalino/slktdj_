@@ -6,7 +6,7 @@ import "./live.css";
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [hasEnded, setHasEnded] = useState<boolean>(false);
 
   const theme = createTheme();
@@ -66,42 +66,47 @@ const Live = () => {
 
   return (
     <Box className="liveMainContainer">
-      <img
-        className="siteGif"
-        id="gif1"
-        src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/computer.gif"
-      />
-      <Box className="phantomContainer" />
-      <Box className="playerContainer">
-        <video
-          ref={videoPlayerRef}
-          className="player"
-          id="video-player"
-          playsInline
-          controls
-        ></video>
-        <ThemeProvider theme={theme}>
-          {!isPlaying && !hasEnded && (
-            <Typography variant="h6">
-              Looks likes nothing is playing! Check back soon or refresh your
-              browser.
-            </Typography>
-          )}
-          {hasEnded && (
-            <Typography variant="h6">
-              The live stream has ended. Thanks for coming!
-            </Typography>
-          )}
-        </ThemeProvider>
+      <Box className="liveTopContainer">
+        <img
+          className="siteGif"
+          id="gif1"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/computer.gif"
+        />
       </Box>
-      <Box className="chatContainer">
-        <Chat isPlaying={isPlaying} />
+      <Box className="liveMiddleContainer">
+        <Box className="liveMiddlePlayer">
+          <video
+            ref={videoPlayerRef}
+            className="player"
+            id="video-player"
+            playsInline
+            controls
+          ></video>
+          <ThemeProvider theme={theme}>
+            {!isPlaying && !hasEnded && (
+              <Typography variant="h6">
+                Looks likes nothing is playing! Check back soon or refresh your
+                browser.
+              </Typography>
+            )}
+            {hasEnded && (
+              <Typography variant="h6">
+                The live stream has ended. Thanks for coming!
+              </Typography>
+            )}
+          </ThemeProvider>
+        </Box>
       </Box>
-      <img
-        className="siteGif"
-        id="gif2"
-        src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/kramer.gif"
-      />
+      <Box className="liveBottomContainer">
+        <img
+          className="siteGif"
+          id="gif2"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/kramer.gif"
+        />
+        <Box className="liveChatContainer">
+          <Chat isPlaying={isPlaying} />
+        </Box>
+      </Box>
     </Box>
   );
 };

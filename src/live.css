@@ -3,16 +3,9 @@
     flex-direction: column;
     align-items: center;
   }
-  .phantomContainer {
-    display: none;
-  }
-  .playerContainer {
-    width: 100%;
-  }
   .chatContainer {
     width: 100%;
   }
-
   .siteGif {
     width: 150px;
     height: 150px;
@@ -23,12 +16,7 @@
   .liveMainContainer {
     flex-direction: column;
   }
-  .phantomContainer {
-    display: none;
-  }
-  .playerContainer {
-    width: 100%;
-  }
+
   .siteGif {
     width: 200px;
     height: 200px;
@@ -39,19 +27,16 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  .liveMainContainer {
+  /* .liveMainContainer {
     flex-direction: row;
-  }
-  .phantomContainer {
-    width: 25%;
-  }
-  .playerContainer {
+  } */
+
+  .liveMiddlePlayer {
     width: 50%;
   }
   .chatContainer {
     width: 25%;
   }
-
   .siteGif {
     width: 300px;
     height: 300px;
@@ -60,6 +45,7 @@
 
 .liveMainContainer {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   padding-left: 30px;
   padding-right: 30px;
@@ -67,7 +53,25 @@
   padding-bottom: 122px;
 }
 
-.playerContainer {
+.liveTopContainer {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+}
+
+.liveMiddleContainer {
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+}
+
+.liveBottomContainer {
+  border: 1px solid yellow;
+  display: flex;
+  justify-content: center;
+}
+
+.liveMiddlePlayer {
   display: flex;
   flex-direction: column;
   align-items: center;
