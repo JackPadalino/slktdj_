@@ -66,7 +66,11 @@ const Live = () => {
 
   return (
     <Box className="liveMainContainer">
-      <img className="siteGif" id="gif1" src="assets/graphics/computer.gif" />
+      <img
+        className="siteGif"
+        id="gif1"
+        src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/computer.gif"
+      />
       <Box className="phantomContainer" />
       <Box className="playerContainer">
         <video
@@ -93,7 +97,11 @@ const Live = () => {
       <Box className="chatContainer">
         <Chat isPlaying={isPlaying} />
       </Box>
-      <img className="siteGif" id="gif2" src="assets/graphics/kramer.gif" />
+      <img
+        className="siteGif"
+        id="gif2"
+        src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/kramer.gif"
+      />
     </Box>
   );
 };
