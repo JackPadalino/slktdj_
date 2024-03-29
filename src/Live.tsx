@@ -75,27 +75,24 @@ const Live = () => {
           className="level"
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/level.gif"
         />
-        <Box className="welcomeContainer">
+        <img
+          className="djGuy"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/dj.gif"
+        />
+        <Box className="welcomeConstructionContainer">
           <img
-            className="djGuy"
-            src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/dj.gif"
+            className="slktWebsite"
+            src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/slktdjwebsite.jpg"
           />
-          <Box className="welcomeConstructionContainer">
-            <img
-              className="slktWebsite"
-              src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/slktdjwebsite.jpg"
-            />
-            <img
-              className="constructionImg"
-              src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/construction.gif"
-            />
-          </Box>
-
-          <img
-            className="djGuy"
-            src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/dj.gif"
-          />
+          {/* <img
+            className="constructionImg"
+            src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/construction.gif"
+          /> */}
         </Box>
+        <img
+          className="djGuy"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/dj.gif"
+        />
 
         <img
           className="level"

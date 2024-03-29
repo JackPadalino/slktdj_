@@ -39,6 +39,10 @@
     flex-direction: column;
   }
 
+  .welcomeContainer {
+    width: 50%;
+  }
+
   .liveMiddlePlayer {
     width: 75%;
   }
@@ -83,20 +87,28 @@
 
   /* images */
   .speaker {
-    height: 200px;
-    width: auto;
+    width: 15%;
+    height: auto;
+    border: 1px solid red;
   }
   .level {
-    height: 150px;
-    width: 75px;
+    /* width: 10%;
+    height: auto; */
+    display: none;
   }
   .djGuy {
-    height: 200px;
-    width: auto;
+    width: 15%;
+    height: auto;
   }
+
+  .welcomeConstructionContainer {
+    border: 1px solid green;
+  }
+
   .slktWebsite {
-    height: 200px;
-    width: auto;
+    width: 50%;
+    height: auto;
+    border: 1px solid green;
   }
   .constructionImg {
     width: 600px;
@@ -122,11 +134,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.welcomeContainer {
-  display: flex;
-  justify-content: center;
 }
 
 .welcomeConstructionContainer {
