@@ -72,7 +72,23 @@ const Live = () => {
           id="gif1"
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/computer.gif"
         />
+        <img
+          className="siteGif"
+          id="gif2"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/matrixcode.gif"
+        />
+        <img
+          className="siteGif"
+          id="gif3"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/mullen.gif"
+        />
+        <img
+          className="siteGif"
+          id="gif4"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/hamburglar.gif"
+        />
       </Box>
+
       <Box className="liveMiddleContainer">
         <Box className="liveMiddlePlayer">
           <video
@@ -100,8 +116,23 @@ const Live = () => {
       <Box className="liveBottomContainer">
         <img
           className="siteGif"
-          id="gif2"
+          id="gif5"
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/kramer.gif"
+        />
+        <img
+          className="siteGif"
+          id="gif6"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/meltingface.gif"
+        />
+        <img
+          className="siteGif"
+          id="gif7"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/ufo.gif"
+        />
+        <img
+          className="siteGif"
+          id="gif8"
+          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/tonyhawk.gif"
         />
         <Box className="liveChatContainer">
           <Chat isPlaying={isPlaying} />
