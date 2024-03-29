@@ -6,9 +6,31 @@
   .chatContainer {
     width: 100%;
   }
-  .siteGif {
+  /* images */
+  .speaker {
+    height: 45px;
+    width: auto;
+  }
+  .level {
+    /* height: 25px;
+    width: 15px; */
+    display: none;
+  }
+  .djGuy {
+    width: 50px;
+    height: auto;
+  }
+  .slktWebsite {
+    height: 75px;
     width: 150px;
-    height: 150px;
+  }
+  .constructionImg {
+    height: 15px;
+    width: 175px;
+  }
+  .middleLevel {
+    width: 30px;
+    height: 100px;
   }
 }
 
@@ -17,9 +39,33 @@
     flex-direction: column;
   }
 
-  .siteGif {
+  .liveMiddlePlayer {
+    width: 75%;
+  }
+
+  /* images */
+  .speaker {
+    height: 50px;
+    width: auto;
+  }
+  .level {
+    height: 50px;
+    width: 25px;
+  }
+  .djGuy {
+    height: 75px;
+    width: auto;
+  }
+  .slktWebsite {
+    height: 100px;
+    width: auto;
+  }
+  .constructionImg {
     width: 200px;
-    height: 200px;
+    height: auto;
+  }
+  .middleLevel {
+    display: none;
   }
 }
 
@@ -34,9 +80,30 @@
   .chatContainer {
     width: 25%;
   }
-  .siteGif {
-    width: 300px;
-    height: 300px;
+
+  /* images */
+  .speaker {
+    height: 200px;
+    width: auto;
+  }
+  .level {
+    height: 150px;
+    width: 75px;
+  }
+  .djGuy {
+    height: 200px;
+    width: auto;
+  }
+  .slktWebsite {
+    height: 200px;
+    width: auto;
+  }
+  .constructionImg {
+    width: 600px;
+    height: auto;
+  }
+  .middleLevel {
+    display: none;
   }
 }
 
@@ -44,8 +111,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   /* adding padding to all componets to account for pop up player div */
   padding-bottom: 122px;
 }
@@ -53,17 +120,35 @@
 .liveTopContainer {
   /* border: 1px solid red; */
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.welcomeContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.welcomeConstructionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counterContainer {
+  display: flex;
+  align-items: center;
 }
 
 .liveMiddleContainer {
   /* border: 1px solid green; */
   display: flex;
+  gap: 10px;
   justify-content: center;
 }
 
 .liveBottomContainer {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
@@ -77,4 +162,5 @@
 
 .player {
   width: 100%;
+  border: 2px solid blue;
 }
