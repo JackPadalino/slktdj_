@@ -1,35 +1,49 @@
 @media only screen and (max-width: 600px) {
-  .liveMainContainer {
-    padding: 10px;
-  }
   .liveMiddlePlayer {
     width: 80%;
+  }
+  .userCounter {
+    width: 15%;
+  }
+  .goku1 {
+    width: 25%;
+  }
+  .goku2 {
+    width: 25%;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1280px) {
   .liveMainContainer {
     flex-direction: column;
-    padding: 20px;
   }
   .liveMiddlePlayer {
     width: 80%;
   }
+  .userCounter {
+    width: 15%;
+  }
+  .goku1 {
+    width: 25%;
+  }
+  .goku2 {
+    width: 25%;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
-  .liveMainContainer {
-    padding: 20px;
-  }
   .liveMiddlePlayer {
     width: 60%;
+  }
+  .userCounter {
+    width: 25%;
   }
 }
 
 .liveMainContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .liveTopContainer {
@@ -70,10 +84,6 @@
   justify-content: space-between;
 }
 
-.chatContainer {
-  width: 25%;
-}
-
 .middleLevel {
   width: 10%;
 }
@@ -86,10 +96,27 @@
 
 .player {
   width: 100%;
-  border: 2px solid blue;
+  border: 3px solid blue;
 }
 
 .liveBottomContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.counterContainer {
+  display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.userCounter {
+  margin-left: 3px;
+}
+
+.goku2 {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }

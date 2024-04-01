@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { ListItem, ListItemText, Typography } from "@mui/material";
+import { ListItem, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Virtuoso } from "react-virtuoso";
 import "./messagesList.css";
@@ -21,12 +21,6 @@ theme.typography.h6 = {
   textAlign: "center",
   fontSize: "16px",
   color: "limegreen",
-  // "@media (min-width: 600px) and (max-width: 1280px)": {
-  //   fontSize: "16px",
-  // },
-  // "@media (min-width:1280px)": {
-  //   fontSize: "16px",
-  // },
 };
 
 const MessagesList = ({ chatMessages }: MessagePops) => {
@@ -57,10 +51,6 @@ const MessagesList = ({ chatMessages }: MessagePops) => {
       itemContent={(index, message) => (
         <ThemeProvider theme={theme}>
           <ListItem key={index} component="div" disablePadding>
-            {/* <ListItemText
-            className="listItem"
-            primary={`${message.username}: ${message.content}`}
-          /> */}
             <Typography variant="h6">{`${message.username}: ${message.content}`}</Typography>
           </ListItem>
         </ThemeProvider>

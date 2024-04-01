@@ -2,18 +2,13 @@
   .chatFeed {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1280px) {
-  /* .chatMainContainer {
-      display: none;
-    } */
   .chatFeed {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 }
 
@@ -24,19 +19,18 @@
   }
 }
 
+.chatMainContainer {
+  width: 100%;
+}
+
 .chatForm {
   display: flex;
   gap: 3px;
 }
 
-.chatTitle {
-  text-align: center;
-}
-
 .chatFormElement {
   height: 20px;
   border: none;
-  /* border-radius: 3px; */
   padding-left: 3px;
   padding-right: 3px;
   color: black;

@@ -157,8 +157,8 @@ const Chat = ({ isPlaying, hasEnded }: ChatProps) => {
         )}
       </ThemeProvider>
       {!chatConnection && isPlaying && (
-        <Box>
-          <h4>Join the chat</h4>
+        <Box className="joinChatForm">
+          <h2 className="chatTitle">Join the chat</h2>
           {/* @ts-expect-error: because I said so! */}
           <form className="chatForm" onSubmit={handleJoinChat}>
             <input
@@ -176,16 +176,16 @@ const Chat = ({ isPlaying, hasEnded }: ChatProps) => {
         </Box>
       )}
       {chatConnection && isPlaying && (
-        <Box className="chatFeed">
+        <Box className="">
           {firstMessageSent ? (
-            <h4 className="chatTitle">Chat</h4>
+            <h2 className="chatTitle">Chat</h2>
           ) : (
-            <h4 className="chatTitle">Say hello to everyone!</h4>
+            <h2 className="chatTitle">Say hello to everyone!</h2>
           )}
-          <Box className="messagesContainer">
-            {/* @ts-expect-error: because I said so! */}
-            <MessagesList chatMessages={chatMessages} />
-          </Box>
+          {/* <Box className="messagesContainer"> */}
+          {/* @ts-expect-error: because I said so! */}
+          <MessagesList chatMessages={chatMessages} />
+          {/* </Box> */}
           {/* @ts-expect-error: because I said so! */}
           <form className="chatForm" onSubmit={handleSendMessage}>
             <input

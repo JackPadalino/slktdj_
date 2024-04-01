@@ -5,7 +5,7 @@ import "./live.css";
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [hasEnded, setHasEnded] = useState<boolean>(false);
 
   const initPlayer = async () => {
@@ -29,7 +29,7 @@ const Live = () => {
         (err: unknown) => {
           // @ts-expect-error: because I said so!
           if (err.type === "ErrorNotAvailable") {
-            setIsPlaying(false);
+            setIsPlaying(true);
           }
         }
       );
@@ -99,29 +99,22 @@ const Live = () => {
         />
       </Box>
       <Box className="liveBottomContainer">
-        <Box className="liveChatContainer">
-          <Chat isPlaying={isPlaying} hasEnded={hasEnded} />
+        <Box className="counterContainer">
+          <img
+            className="goku1"
+            src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/kamehameha.gif"
+          />
+          <p>You are user </p>
+          <img
+            className="userCounter"
+            src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/counter.jpeg"
+          />
+          <img
+            className="goku2"
+            src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/kamehameha.gif"
+          />
         </Box>
-        {/* <img
-          className="siteGif"
-          id="gif5"
-          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/kramer.gif"
-        />
-        <img
-          className="siteGif"
-          id="gif6"
-          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/meltingface.gif"
-        />
-        <img
-          className="siteGif"
-          id="gif7"
-          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/iwanttobelieve.jpg"
-        />
-        <img
-          className="siteGif"
-          id="gif8"
-          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/tonyhawk.gif"
-        /> */}
+        <Chat isPlaying={isPlaying} hasEnded={hasEnded} />
       </Box>
     </Box>
   );
