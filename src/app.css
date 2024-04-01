@@ -14,7 +14,6 @@
 
 body {
   /* default background color for all components */
-  margin-top: 30px;
   background-color: #262626;
   background-image: url("https://slktdj-s3-bucket.s3.amazonaws.com/backgrounds/bluedrag.jpg");
 }

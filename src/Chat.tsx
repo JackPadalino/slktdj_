@@ -1,14 +1,33 @@
 import { useState, ChangeEvent } from "react";
 import axios from "axios";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import MessagesList from "./MessagesList";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./chat.css";
 
 interface ChatProps {
   isPlaying: boolean;
+  hasEnded: boolean;
 }
 
-const Chat = ({ isPlaying }: ChatProps) => {
+const theme = createTheme();
+theme.typography.h6 = {
+  fontFamily: "Times New Roman",
+  textAlign: "center",
+  fontSize: "20px",
+  color: "limegreen",
+  "@media (max-width: 600px)": {
+    fontSize: "10px",
+  },
+  "@media (min-width: 600px) and (max-width: 1280px)": {
+    fontSize: "12px",
+  },
+  "@media (min-width:1280px)": {
+    fontSize: "20px",
+  },
+};
+
+const Chat = ({ isPlaying, hasEnded }: ChatProps) => {
   const [chatConnection, setChatConnection] = useState(null);
   const [username, setUsername] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -124,6 +143,19 @@ const Chat = ({ isPlaying }: ChatProps) => {
 
   return (
     <Box className="chatMainContainer">
+      <ThemeProvider theme={theme}>
+        {!isPlaying && !hasEnded && (
+          <Typography variant="h6">
+            Looks likes nothing is playing! Check back soon or refresh your
+            browser.
+          </Typography>
+        )}
+        {hasEnded && (
+          <Typography variant="h6">
+            The live stream has ended. Thanks for coming!
+          </Typography>
+        )}
+      </ThemeProvider>
       {!chatConnection && isPlaying && (
         <Box>
           <h4>Join the chat</h4>
@@ -145,7 +177,11 @@ const Chat = ({ isPlaying }: ChatProps) => {
       )}
       {chatConnection && isPlaying && (
         <Box className="chatFeed">
-          {firstMessageSent ? <h4>Chat</h4> : <h4>Say hello to everyone!</h4>}
+          {firstMessageSent ? (
+            <h4 className="chatTitle">Chat</h4>
+          ) : (
+            <h4 className="chatTitle">Say hello to everyone!</h4>
+          )}
           <Box className="messagesContainer">
             {/* @ts-expect-error: because I said so! */}
             <MessagesList chatMessages={chatMessages} />

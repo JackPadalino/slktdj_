@@ -21,13 +21,16 @@
   .chatFeed {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 }
 
 .chatForm {
   display: flex;
   gap: 3px;
+}
+
+.chatTitle {
+  text-align: center;
 }
 
 .chatFormElement {

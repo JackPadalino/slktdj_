@@ -1,28 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Chat from "./Chat";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./live.css";
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [hasEnded, setHasEnded] = useState<boolean>(false);
-
-  const theme = createTheme();
-
-  theme.typography.h6 = {
-    fontFamily: "Times New Roman",
-    textAlign: "center",
-    fontSize: "20px",
-    color: "limegreen",
-    // "@media (min-width: 600px) and (max-width: 1280px)": {
-    //   fontSize: "16px",
-    // },
-    // "@media (min-width:1280px)": {
-    //   fontSize: "16px",
-    // },
-  };
 
   const initPlayer = async () => {
     // @ts-expect-error: because I said so!
@@ -72,31 +56,22 @@ const Live = () => {
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/speaker.gif"
         />
         <img
-          className="level"
-          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/level.gif"
-        />
-        <img
           className="djGuy"
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/dj.gif"
         />
         <Box className="welcomeConstructionContainer">
           <img
-            className="slktWebsite"
+            className="slktWebsiteTitle"
             src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/slktdjwebsite.jpg"
           />
-          {/* <img
+          <img
             className="constructionImg"
             src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/construction.gif"
-          /> */}
+          />
         </Box>
         <img
           className="djGuy"
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/dj.gif"
-        />
-
-        <img
-          className="level"
-          src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/level.gif"
         />
         <img
           className="speaker"
@@ -117,30 +92,17 @@ const Live = () => {
             playsInline
             controls
           ></video>
-          <ThemeProvider theme={theme}>
-            {!isPlaying && !hasEnded && (
-              <Typography variant="h6">
-                Looks likes nothing is playing! Check back soon or refresh your
-                browser.
-              </Typography>
-            )}
-            {hasEnded && (
-              <Typography variant="h6">
-                The live stream has ended. Thanks for coming!
-              </Typography>
-            )}
-          </ThemeProvider>
-          <Box className="liveChatContainer">
-            <Chat isPlaying={isPlaying} />
-          </Box>
         </Box>
         <img
           className="middleLevel"
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/level.gif"
         />
       </Box>
-      {/* <Box className="liveBottomContainer">
-        <img
+      <Box className="liveBottomContainer">
+        <Box className="liveChatContainer">
+          <Chat isPlaying={isPlaying} hasEnded={hasEnded} />
+        </Box>
+        {/* <img
           className="siteGif"
           id="gif5"
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/kramer.gif"
@@ -159,8 +121,8 @@ const Live = () => {
           className="siteGif"
           id="gif8"
           src="https://slktdj-s3-bucket.s3.amazonaws.com/graphics/tonyhawk.gif"
-        />
-      </Box> */}
+        /> */}
+      </Box>
     </Box>
   );
 };

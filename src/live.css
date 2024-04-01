@@ -1,164 +1,81 @@
 @media only screen and (max-width: 600px) {
   .liveMainContainer {
-    flex-direction: column;
-    align-items: center;
+    padding: 10px;
   }
-  .chatContainer {
-    width: 100%;
-  }
-  /* images */
-  .speaker {
-    height: 45px;
-    width: auto;
-  }
-  .level {
-    /* height: 25px;
-    width: 15px; */
-    display: none;
-  }
-  .djGuy {
-    width: 50px;
-    height: auto;
-  }
-  .slktWebsite {
-    height: 75px;
-    width: 150px;
-  }
-  .constructionImg {
-    height: 15px;
-    width: 175px;
-  }
-  .middleLevel {
-    width: 30px;
-    height: 100px;
+  .liveMiddlePlayer {
+    width: 80%;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1280px) {
   .liveMainContainer {
     flex-direction: column;
+    padding: 20px;
   }
-
-  .welcomeContainer {
-    width: 50%;
-  }
-
   .liveMiddlePlayer {
-    width: 75%;
-  }
-
-  /* images */
-  .speaker {
-    height: 50px;
-    width: auto;
-  }
-  .level {
-    height: 50px;
-    width: 25px;
-  }
-  .djGuy {
-    height: 75px;
-    width: auto;
-  }
-  .slktWebsite {
-    height: 100px;
-    width: auto;
-  }
-  .constructionImg {
-    width: 200px;
-    height: auto;
-  }
-  .middleLevel {
-    display: none;
+    width: 80%;
   }
 }
 
 @media only screen and (min-width: 1280px) {
-  /* .liveMainContainer {
-    flex-direction: row;
-  } */
-
+  .liveMainContainer {
+    padding: 20px;
+  }
   .liveMiddlePlayer {
-    width: 50%;
-  }
-  .chatContainer {
-    width: 25%;
-  }
-
-  /* images */
-  .speaker {
-    width: 15%;
-    height: auto;
-    border: 1px solid red;
-  }
-  .level {
-    /* width: 10%;
-    height: auto; */
-    display: none;
-  }
-  .djGuy {
-    width: 15%;
-    height: auto;
-  }
-
-  .welcomeConstructionContainer {
-    border: 1px solid green;
-  }
-
-  .slktWebsite {
-    width: 50%;
-    height: auto;
-    border: 1px solid green;
-  }
-  .constructionImg {
-    width: 600px;
-    height: auto;
-  }
-  .middleLevel {
-    display: none;
+    width: 60%;
   }
 }
 
 .liveMainContainer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  /* adding padding to all componets to account for pop up player div */
-  padding-bottom: 122px;
+  gap: 20px;
 }
 
 .liveTopContainer {
-  /* border: 1px solid red; */
   display: flex;
-  align-items: center;
   justify-content: space-between;
+}
+
+.speaker {
+  width: 15%;
+  height: auto;
+}
+
+.djGuy {
+  width: 15%;
+  height: auto;
 }
 
 .welcomeConstructionContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 40%;
 }
 
-.counterContainer {
-  display: flex;
-  align-items: center;
+.slktWebsiteTitle {
+  width: 100%;
+  height: auto;
+}
+
+.constructionImg {
+  width: 100%;
+  height: auto;
 }
 
 .liveMiddleContainer {
-  /* border: 1px solid green; */
   display: flex;
   gap: 10px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.liveBottomContainer {
-  /* border: 1px solid yellow; */
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: space-between;
+.chatContainer {
+  width: 25%;
+}
+
+.middleLevel {
+  width: 10%;
 }
 
 .liveMiddlePlayer {
@@ -170,4 +87,9 @@
 .player {
   width: 100%;
   border: 2px solid blue;
+}
+
+.liveBottomContainer {
+  display: flex;
+  justify-content: center;
 }
