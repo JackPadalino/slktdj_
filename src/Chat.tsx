@@ -1,8 +1,7 @@
 import { useState, ChangeEvent } from "react";
 import axios from "axios";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import MessagesList from "./MessagesList";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./chat.css";
 
 interface ChatProps {
@@ -10,24 +9,24 @@ interface ChatProps {
   hasEnded: boolean;
 }
 
-const theme = createTheme();
-theme.typography.h6 = {
-  fontFamily: "Times New Roman",
-  textAlign: "center",
-  fontSize: "20px",
-  color: "limegreen",
-  "@media (max-width: 600px)": {
-    fontSize: "10px",
-  },
-  "@media (min-width: 600px) and (max-width: 1280px)": {
-    fontSize: "12px",
-  },
-  "@media (min-width:1280px)": {
-    fontSize: "20px",
-  },
-};
+// const theme = createTheme();
+// theme.typography.h6 = {
+//   fontFamily: "Times New Roman",
+//   textAlign: "center",
+//   fontSize: "20px",
+//   color: "limegreen",
+//   "@media (max-width: 600px)": {
+//     fontSize: "10px",
+//   },
+//   "@media (min-width: 600px) and (max-width: 1280px)": {
+//     fontSize: "12px",
+//   },
+//   "@media (min-width:1280px)": {
+//     fontSize: "20px",
+//   },
+// };
 
-const Chat = ({ isPlaying, hasEnded }: ChatProps) => {
+const Chat = ({ isPlaying }: ChatProps) => {
   const [chatConnection, setChatConnection] = useState(null);
   const [username, setUsername] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -143,7 +142,7 @@ const Chat = ({ isPlaying, hasEnded }: ChatProps) => {
 
   return (
     <Box className="chatMainContainer">
-      <ThemeProvider theme={theme}>
+      {/* <ThemeProvider theme={theme}>
         {!isPlaying && !hasEnded && (
           <Typography variant="h6">
             Looks likes nothing is playing! Check back soon or refresh your
@@ -155,7 +154,7 @@ const Chat = ({ isPlaying, hasEnded }: ChatProps) => {
             The live stream has ended. Thanks for coming!
           </Typography>
         )}
-      </ThemeProvider>
+      </ThemeProvider> */}
       {!chatConnection && isPlaying && (
         <Box className="joinChatForm">
           <h2 className="chatTitle">Join the chat</h2>

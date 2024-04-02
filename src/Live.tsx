@@ -1,7 +1,26 @@
 import { useState, useEffect, useRef } from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Chat from "./Chat";
 import "./live.css";
+
+const theme = createTheme();
+
+theme.typography.h6 = {
+  fontFamily: "Times New Roman",
+  textAlign: "center",
+  fontSize: "20px",
+  color: "limegreen",
+  "@media (max-width: 600px)": {
+    fontSize: "10px",
+  },
+  "@media (min-width: 600px) and (max-width: 1280px)": {
+    fontSize: "12px",
+  },
+  "@media (min-width:1280px)": {
+    fontSize: "20px",
+  },
+};
 
 const Live = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
@@ -99,6 +118,19 @@ const Live = () => {
         />
       </Box>
       <Box className="liveBottomContainer">
+        <ThemeProvider theme={theme}>
+          {!isPlaying && !hasEnded && (
+            <Typography variant="h6">
+              Looks likes nothing is playing! Check back soon or refresh your
+              browser.
+            </Typography>
+          )}
+          {hasEnded && (
+            <Typography variant="h6">
+              The live stream has ended. Thanks for coming!
+            </Typography>
+          )}
+        </ThemeProvider>
         <Box className="counterContainer">
           <img
             className="goku1"
